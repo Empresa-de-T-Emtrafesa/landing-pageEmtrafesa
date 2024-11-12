@@ -1,0 +1,57 @@
+<nav class="direc d-flex navbar-expand-lg">
+    <ul class="navbar-nav ma-auto">
+        <li class="nav-item">
+            <a href="#phone" class="address"> <i class="fa-solid fa-phone"></i> 987 456 217 </a>
+        </li>
+        <li class="nav-item">
+            <a href="#location" class="address"><i class="fa-solid fa-location-dot"></i> Av. Túpac Amaru 185 Urb.
+                Huerta Grande, Trujillo-Perú
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#facebook" class="address"> <i class="fa-brands fa-facebook"></i> </a>
+        </li>
+        <li class="nav-item">
+            <a href="#instagram" class="address"> <i class="fa-brands fa-instagram"></i> </a>
+        </li>
+        <li class="nav-item">
+            <a href="#twitter" class="address"> <i class="fa-brands fa-twitter"></i> </a>
+        </li>
+    </ul>
+</nav>
+<nav class="navbar navbar-expand-lg ">
+    <div class="container d-flex ">
+        <a href="#" class="navbar-brand">
+            <img src="assets/image.png" alt="Emtrafesa Logo" width="40" height="45"
+                class="d-inline-block align-text-center">
+            EMTRAFESA
+        </a>
+
+        <button class="nav-toogler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="nav-toogler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav ma-auto">
+                <li class="nav-item">
+                    <a href="#travel" class="nav-link"><i class="fa-solid fa-road"></i> Viajes </a>
+                </li>
+                <li>
+                    <a class="btn btn-outline-primary me-3" routerLink="/auth/register"> Registrarse </a>
+                </li>
+                <li>
+                    <a class="btn btn-primary" routerLink="/auth/login"><i class="fa-solid fa-lock"></i> Iniciar Sesión</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown">
+                        Mi perfil
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" routerLink="/customer/profile">Ver Perfil</a></li>
+                        <li><a class="dropdown-item" href="#" (click)="logout()">Cerrar Sesión</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

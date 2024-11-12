@@ -1,0 +1,85 @@
+<section class=" row fondo">
+    <div class="col-md-6 izquierda">
+        <h1 class="welcome">¡Bienvenido!</h1>
+        <p class="description-register">
+            Vive una experiencia única, registrate y<br>
+            compra pasajes a los mejores precios.<br>
+            ¿Ya tienes cuenta?
+        </p>
+        <div class="">
+            <button class="form-login-fondo" type="submit">Inicia Sesion</button>
+        </div>
+    </div>
+    <div class="col-md-6 p-4">
+        <h2 class="register text-center p-5">Regístrate</h2>
+            <form class="formulario row g-3 needs-validation" novalidate>
+                <div class="col-md-6">
+                    <label for="tipoDocumento" class="form-label">Tipo de documento</label>
+                    <select class="form-select form-control" aria-label="Small select example" required>
+                        <option selected disabled value="">Seleccione el documento</option>
+                        <option value="1">Documento de identidad (DNI)</option>
+                        <option value="2">Carnet de extranjería</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Por favor, selecciona una opción
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="numeroDocumento" class="form-label">Número de documento</label>
+                    <input type="text" class="form-control" id="numeroDocumento" placeholder="Ingrese número de documento"
+                        required>
+                    <div class="invalid-feedback">
+                        Por favor, ingrese el número de documento
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="name" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="name" placeholder="Ingrese su nombre" required>
+                    <div class="invalid-feedback">
+                        Por favor, ingrese su nombre
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="lastName" class="form-label">Apellidos</label>
+                    <input type="text" class="form-control" id="lastName" placeholder="Ingrese sus apellidos" required>
+                    <div class="invalid-feedback">
+                        Por favor, ingrese sus apellidos
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="tipoCelular" class="form-label">Tipo de teléfono</label>
+                    <select class="form-select form-control" aria-label="Small select example" required>
+                        <option selected disabled value="">Seleccione el teléfono</option>
+                        <option value="1">Celular</option>
+                        <option value="2">Fijo</option>
+                        <option value="3">Trabajo</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="numeroTelefono" class="form-label">Número de telefono</label>
+                    <input type="text" class="form-control" id="numeroTelefono" placeholder="Ingrese número de telefono"
+                        required>
+                    <div class="invalid-feedback">
+                        Por favor, ingrese un número de telefono
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <label for="inputEmail" class="form-label">Correo Electrónico</label>
+                    <input type="text" class=" form-control" id="inputEmail" placeholder="user@dominio.com" required>
+                    <div class="invalid-feedback">
+                        Por favor, ingrese un correo electrónico
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <label for="inputPassword" class="form-label">Contraseña</label>
+                    <input type="text" class="form-control" id="inputPassword" placeholder="contraseña12345" required>
+                    <div class="invalid-feedback">
+                        Por favor, ingrese una contraseña
+                    </div>
+                </div>
+                <div class="">
+                    <button class="form-login-form" type="submit">Registrarse</button>
+                </div>
+            </form>
+    </div>
+</section>

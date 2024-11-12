@@ -1,0 +1,114 @@
+.derecha{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: 'Trebuchet MS';
+}
+
+.formulario{
+    max-width: 410px;
+    margin: 0 auto;
+}
+
+.form-control{
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+    font-size: 12px;
+    height: 45px;
+    border-radius: 15px;
+}
+
+.form-label{
+    font-size: 14px;
+    color: #4e4d4d;
+}
+
+.form-login-form{
+    color: #ffffff;
+    background-color: #7432fa;
+    border-radius: 15px;
+    border-color: #ffffff;
+    padding: 10px 20px ;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+    width: 300px; 
+    display: block;
+    margin: 10px auto; 
+    text-align: center;
+    font-size: 17px;
+}
+.form-login-form:hover{
+        background-color: #46218f;
+        color: #ffffff;
+        border-color: #46218f;
+}
+
+.izquierda{
+    background-color: #7432fa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+}
+
+.welcome{
+    font-weight: bolder;
+    text-align: center;
+    color: #ffffff;
+}
+
+.description-register{
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.form-login-fondo{
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    background-color: #7432fa;
+    border-radius: 15px;
+    
+    padding: 10px 20px ;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.5);
+    width: 300px; 
+    display: block;
+    margin: 10px auto; 
+    text-align: center;
+    font-size: 18px;
+}
+.form-login-fondo:hover{
+    border: 2px solid #ffffff;
+    background-color: #ffffff;
+    color: #7432fa;
+        
+    }
+
+.regresar{
+    width: 90%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.btn-atras{
+    color: #7432fa;
+    border-radius: 15px;
+    border: 2px solid #7432fa;
+    padding: 5px 10px ;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+    width: 90px; 
+    height: 40px;
+    display: block;
+    text-align: center;
+    font-size: 16px;
+}
+.btn-atras:hover{
+        background-color: #ffffff;
+        color: #7432fa;
+        border-color: #7432fa;
+}
