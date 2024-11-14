@@ -1,28 +1,46 @@
 <section class="row fondo">
     <div class="col-md-6 p-4 derecha">
         <div class=" regresar d-flex">
-                <a href="/" class="navbar-brand btn-atras">Atrás</a>
+            <a href="/" class="navbar-brand btn-atras">Atrás</a>
         </div>
-        <h2 class="p-4" style="font-family: 'Trebuchet MS';">Inicia Sesión</h2>
-            <form class="formulario row g-3 needs-validation" novalidate>
-                <div class="col-md-12">
-                    <label for="inputEmail" class="form-label">Correo Electrónico</label>
-                    <input type="text" class=" form-control" id="inputEmail" placeholder="user@dominio.com" required>
-                    <div class="invalid-feedback">
-                        Por favor, ingrese un correo electrónico
+        <h2 class="register text-center">Inicia sesión</h2>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="formulario row g-3">
+            <div class="col-md-12">
+                <label for="inputEmail" class="form-label">Correo Electrónico</label>
+                <input type="text" formControlName="correo" class="form-control" id="inputEmail"
+                    placeholder="user@dominio.com"
+                    [ngClass]="{ 'is-invalid': loginForm.get('correo')?.invalid && (loginForm.get('correo')?.dirty || loginForm.get('correo')?.touched) }">
+
+                <div class="text-danger validacion"
+                    [style.visibility]="loginForm.get('correo')?.invalid && (loginForm.get('correo')?.touched || loginForm.get('correo')?.dirty) ? 'visible' : 'hidden'">
+                    <div *ngIf="loginForm.get('correo')?.errors?.['required']">Campo obligatorio.</div>
+                    <div *ngIf="loginForm.get('correo')?.errors?.['email']">Correo inválido.</div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <label for="inputPassword" class="form-label">Contraseña</label>
+                <input type="password" formControlName="contrasena" class="form-control" id="inputPassword"
+                    placeholder="contraseña12345"
+                    [ngClass]="{ 'is-invalid': loginForm.get('contrasena')?.invalid && (loginForm.get('contrasena')?.dirty || loginForm.get('contrasena')?.touched) }">
+
+                <div class="text-danger validacion"
+                    [style.visibility]="loginForm.get('contrasena')?.invalid && (loginForm.get('contrasena')?.touched || loginForm.get('contrasena')?.dirty)? 'visible' : 'hidden'">
+                    <div *ngIf="loginForm.get('contrasena')?.errors?.['required']">Campo obligatorio.</div>
+                    <div *ngIf="loginForm.get('contrasena')?.errors?.['minlength']">Debe tener al menos 8 caracteres.
                     </div>
                 </div>
-                <div class="col-md-12">
-                    <label for="inputPassword" class="form-label">Contraseña</label>
-                    <input type="text" class="form-control" id="inputPassword" placeholder="contraseña12345" required>
-                    <div class="invalid-feedback">
-                        Por favor, ingrese una contraseña
-                    </div>
-                </div>
-                <div class="">
-                    <button class="form-login-form" type="submit">Iniciar Sesión</button>
-                </div>
-            </form>
+            </div>
+
+            <div class="">
+                <button class="form-login-form" type="submit" [disabled]="!loginForm.valid"
+                    [ngClass]="{'disabled-button': !loginForm.valid}">
+                    Iniciar Sesión
+                </button>
+            </div>
+
+        </form>
+
     </div>
     <div class="col-md-6 izquierda">
         <h1 class="welcome">¡Gracias por volver!</h1>
@@ -32,7 +50,7 @@
             ¿Aún no tienes cuenta?
         </p>
         <div class="">
-            <a href="/" class="navbar-brand form-login-fondo">Regístrate</a>
+            <a routerLink="/auth/register" class="navbar-brand form-login-fondo">Regístrate</a>
         </div>
     </div>
 </section>

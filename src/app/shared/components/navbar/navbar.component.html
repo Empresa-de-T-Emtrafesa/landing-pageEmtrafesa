@@ -34,17 +34,21 @@
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
             <ul class="navbar-nav ma-auto">
                 <li class="nav-item">
-                    <a href="#travel" class="nav-link"><i class="fa-solid fa-road"></i> Viajes </a>
+                    <a routerLink="" class="nav-link"><i class="fa-solid fa-road"></i> Mis viajes </a>
                 </li>
+
                 <li>
                     <a class="btn btn-outline-primary me-3" routerLink="/auth/register"> Registrarse </a>
                 </li>
+
+
                 <li>
                     <a class="btn btn-primary" routerLink="/auth/login"><i class="fa-solid fa-lock"></i> Iniciar Sesión</a>
                 </li>
+
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown">
-                        Mi perfil
+                        <i class="fa-solid fa-user"></i> Mi perfil
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" routerLink="/customer/profile">Ver Perfil</a></li>

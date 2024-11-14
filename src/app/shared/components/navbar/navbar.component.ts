@@ -11,7 +11,6 @@ import { Router, RouterLink, RouterOutlet } from '@angular/router';
 export class NavbarComponent {
   constructor(private router: Router) {}
   logout() {
-    // Aquí puedes agregar lógica adicional para cerrar la sesión, como eliminar el token de autenticación
     console.log('Cerrando sesión...');
     
     // Redirige a la página principal
