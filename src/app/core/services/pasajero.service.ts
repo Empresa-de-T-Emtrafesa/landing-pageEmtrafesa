@@ -9,11 +9,11 @@ import { PasajeroResponse } from "../../shared/models/pasajero-response";
     providedIn: 'root'
 })
 export class PasajeroService{
-    baseUrl = `${environment.baseUrl}/register`;
-    private http = inject(HttpClient);
-    constructor (){}
+    private baseUrl = `${environment.baseUrl}/register/pasajero`;
+    constructor(private http: HttpClient) {}
+
 
     pasajero (pasajeroRequest: PasajeroRequest): Observable<PasajeroResponse>{
-        return this.http.post<PasajeroResponse>(`${this.baseUrl}/pasajero`, pasajeroRequest);
+        return this.http.post<PasajeroResponse>(this.baseUrl, pasajeroRequest);
     }
 }

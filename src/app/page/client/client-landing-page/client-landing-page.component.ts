@@ -12,6 +12,7 @@ import flatpickr from 'flatpickr';
 import { ViajeComponent } from '../viaje/viaje.component';
 import { AsientosComponent } from '../asientos/asientos.component';
 import { PasajeroComponent } from '../pasajero/pasajero.component';
+import { PasajeroService } from '../../../core/services/pasajero.service';
 
 @Component({
   selector: 'app-client-landing-page',
@@ -33,6 +34,9 @@ import { PasajeroComponent } from '../pasajero/pasajero.component';
   encapsulation: ViewEncapsulation.None
 })
 export class ClientLandingPageComponent {
+  @ViewChild(PasajeroComponent) pasajeroComponent!: PasajeroComponent; // Referencia al componente hijo
+  formValid: boolean = false; // Para habilitar/deshabilitar el botón
+  private pasajeroService = inject(PasajeroService); // Servicio de pasajero
   private _formBuilder = inject(FormBuilder);
 
   itinerarioSeleccionado: any = null; // Guardar el itinerario seleccionado
@@ -93,6 +97,16 @@ export class ClientLandingPageComponent {
   @ViewChild('fechaIdaInput') fechaIdaInput!: ElementRef;
 
   constructor() {}
+
+  registrarPasajero(): void {
+    // Llama al método de registro del componente hijo (PasajeroComponent)
+    if (this.formValid) {
+      this.pasajeroComponent.onSubmit();
+      this.setStep(4); // Avanza al paso 4 (pago)
+    } else {
+      alert('Complete todos los campos correctamente antes de continuar.');
+    }
+  }
 
   onSeleccionarItinerario(itinerario: any) {
     this.itinerarioSeleccionado = itinerario;

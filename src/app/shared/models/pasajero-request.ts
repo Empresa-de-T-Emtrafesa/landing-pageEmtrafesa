@@ -4,5 +4,5 @@ export interface PasajeroRequest{
     sexo: string;
     tipoDocumento: string;
     numeroDocumento: string;
-    fechaNacimiento: Date;
+    fechaNacimiento: string;
 }

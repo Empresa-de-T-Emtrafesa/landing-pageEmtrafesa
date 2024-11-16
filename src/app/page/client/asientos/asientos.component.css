@@ -58,4 +58,22 @@
     background-color: #7b1fa2;
     border-color: #7b1fa2;
   }
-  
+
+.titulo{
+    font-family: 'Tahoma';
+    font-size: 17px;
+    font-weight: bolder;
+    padding-bottom: 10px;
+}  
+
+.leyenda{
+  font-family: 'Tahoma';
+  font-size: 12px;
+  font-weight: bolder;
+}
+
+.list-unstyled{
+  font-family: 'Tahoma';
+  font-size: 10px;
+  color: #2b2929;
+}

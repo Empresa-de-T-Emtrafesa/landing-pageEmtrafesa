@@ -101,9 +101,14 @@
 
 
                 <div *ngIf="currentStep === 3">
-                    <app-pasajero></app-pasajero>
+                    <app-pasajero (formValidity)="formValid = $event" #pasajeroComponent></app-pasajero>
                     <button class="btn btn-outline-primary mt-3" (click)="setStep(2)">Atrás</button>
-                    <button class="btn btn-primary mt-3" (click)="setStep(4)">Siguiente</button>
+                    <button
+                      class="btn btn-primary mt-3"
+                      [disabled]="!formValid"
+                      (click)="registrarPasajero()">
+                      Ir a Pagar
+                    </button>
                   </div>
                   
 

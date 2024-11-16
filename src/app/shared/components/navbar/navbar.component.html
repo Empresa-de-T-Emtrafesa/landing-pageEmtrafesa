@@ -37,21 +37,21 @@
                     <a routerLink="" class="nav-link"><i class="fa-solid fa-road"></i> Mis viajes </a>
                 </li>
 
-                <li>
-                    <a class="btn btn-outline-primary me-3" routerLink="/auth/register"> Registrarse </a>
+                 <!-- Botones para usuarios NO autenticados -->
+                 <li *ngIf="!isLoggedIn">
+                    <a class="btn btn-outline-primary me-3" routerLink="/auth/register">Registrarse</a>
                 </li>
-
-
-                <li>
+                <li *ngIf="!isLoggedIn">
                     <a class="btn btn-primary" routerLink="/auth/login"><i class="fa-solid fa-lock"></i> Iniciar Sesión</a>
                 </li>
 
-                <li class="nav-item dropdown">
+                <!-- Menú desplegable para usuarios autenticados -->
+                <li class="nav-item dropdown" *ngIf="isLoggedIn">
                     <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown">
                         <i class="fa-solid fa-user"></i> Mi perfil
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" routerLink="/customer/profile">Ver Perfil</a></li>
+                        <li><a class="dropdown-item" routerLink="/client/profile">Ver Perfil</a></li>
                         <li><a class="dropdown-item" href="#" (click)="logout()">Cerrar Sesión</a></li>
                     </ul>
                 </li>

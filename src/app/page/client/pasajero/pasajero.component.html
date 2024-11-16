@@ -1,17 +1,74 @@
-<form [formGroup]="pasajeroForm" (ngSubmit)="onSubmit()">
-    <mat-form-field appearance="fill" class="w-100">
-      <mat-label>Nombre</mat-label>
-      <input matInput formControlName="nombre" placeholder="Ingresa tu nombre" required>
-    </mat-form-field>
+<form [formGroup]="pasajeroForm" (ngSubmit)="onSubmit()" class="formulario row g-3">
+    <div class="col-md-6">
+      <label for="tipoDocumento" class="form-label">Tipo de documento</label>
+      <select
+        class="form-select"
+        formControlName="tipoDocumento"
+        [ngClass]="{ 'is-invalid': pasajeroForm.get('tipoDocumento')?.invalid && pasajeroForm.get('tipoDocumento')?.touched }"
+      >
+        <option value="" disabled>Seleccione el documento</option>
+        <option value="DNI">Documento de identidad (DNI)</option>
+        <option value="CARNET_DE_EXTRANJERIA">Carnet de extranjería</option>
+      </select>
+      <div class="invalid-feedback">Campo obligatorio</div>
+    </div>
   
-    <mat-form-field appearance="fill" class="w-100">
-      <mat-label>Apellido</mat-label>
-      <input matInput formControlName="apellido" placeholder="Ingresa tu apellido" required>
-    </mat-form-field>
+    <div class="col-md-6">
+      <label for="numeroDocumento" class="form-label">Número de documento</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="numeroDocumento"
+        [ngClass]="{ 'is-invalid': pasajeroForm.get('numeroDocumento')?.invalid && pasajeroForm.get('numeroDocumento')?.touched }"
+      />
+      <div class="invalid-feedback">Ingrese un número válido</div>
+    </div>
   
-    <mat-form-field appearance="fill" class="w-100">
-      <mat-label>Teléfono</mat-label>
-      <input matInput formControlName="telefono" placeholder="Ej. 12345678" required>
-    </mat-form-field>
-    </form>
+    <div class="col-md-6">
+      <label for="nombre" class="form-label">Nombre</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="nombre"
+        [ngClass]="{ 'is-invalid': pasajeroForm.get('nombre')?.invalid && pasajeroForm.get('nombre')?.touched }"
+      />
+      <div class="invalid-feedback">Ingrese un nombre válido</div>
+    </div>
+  
+    <div class="col-md-6">
+      <label for="apellidos" class="form-label">Apellidos</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="apellidos"
+        [ngClass]="{ 'is-invalid': pasajeroForm.get('apellidos')?.invalid && pasajeroForm.get('apellidos')?.touched }"
+      />
+      <div class="invalid-feedback">Ingrese apellidos válidos</div>
+    </div>
+  
+    <div class="col-md-6">
+      <label for="sexo" class="form-label">Sexo</label>
+      <select
+        class="form-select"
+        formControlName="sexo"
+        [ngClass]="{ 'is-invalid': pasajeroForm.get('sexo')?.invalid && pasajeroForm.get('sexo')?.touched }"
+      >
+        <option value="" disabled>Seleccione el sexo</option>
+        <option value="MASCULINO">Masculino</option>
+        <option value="FEMENINO">Femenino</option>
+      </select>
+      <div class="invalid-feedback">Campo obligatorio</div>
+    </div>
+  
+    <div class="col-md-6">
+      <label for="fechaNacimiento" class="form-label">Fecha de nacimiento</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="fechaNacimiento"
+        placeholder="YYYY-MM-DD"
+        #fechaNacimientoInput
+      />
+    </div>
+  </form>
   

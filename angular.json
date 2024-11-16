@@ -29,7 +29,6 @@
               "src/styles.css",
               "node_modules/@coreui/coreui/dist/css/coreui.min.css",
               "node_modules/flatpickr/dist/flatpickr.min.css"
-
             ],
             "scripts": [
               "node_modules/@coreui/coreui/dist/js/coreui.min.js"
