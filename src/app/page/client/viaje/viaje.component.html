@@ -1,1 +1,43 @@
-<p>viaje works!</p>
+<div *ngFor="let viaje of viajes" class="viaje-item p-3 mb-3 border rounded">
+    <div class="row align-items-center mx-auto w-100">
+      <!-- Columna de Horarios -->
+      <div class="col-md-4 text-center d-flex flex-column align-items-center">
+        <div class="d-flex align-items-center">
+          <div class="me-2">
+            <strong>{{ viaje.horaSalida }}</strong><br>
+            <small>Salida</small>
+          </div>
+          <div class="mx-2">→</div>
+          <div class="ms-2">
+            <strong>{{ viaje.horaLlegada }}</strong><br>
+            <small>Llegada estimada</small>
+          </div>
+        </div>
+      </div>
+      
+  
+      <!-- Columna de Servicio -->
+      <div class="col-md-3 text-center">
+        <div>Servicio {{ viaje.servicio }}</div>
+        <span [class]="viaje.tipo === 'Escalas' ? 'badge bg-warning text-dark' : 'badge bg-secondary'">
+          {{ viaje.tipo }}
+        </span>
+      </div>
+  
+      <!-- Columna de Asientos -->
+      <div class="col-md-3 text-center">
+        <div>{{ viaje.asientosLibres }} Libres</div>
+        <small>1° Nivel S/ {{ viaje.precioNivel1 }}</small><br />
+        <small>2° Nivel S/ {{ viaje.precioNivel2 }}</small>
+      </div>
+  
+      <!-- Columna de Botón -->
+      <div class="col-md-2 text-center">
+        <div *ngFor="let viaje of viajes" class="viaje-item">
+          <!-- Otros detalles de viaje aquí -->
+          <button class="btn btn-primary" (click)="onElegir(viaje)">Elegir</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,22 @@
+.viaje-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .viaje-servicio .badge {
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px;
+  }
+  
+  .viaje-servicio .escalas {
+    background-color: #ffcc00;
+    color: #333;
+  }
+  
+  .viaje-servicio .directo {
+    background-color: #007bff;
+    color: #fff;
+  }
+  

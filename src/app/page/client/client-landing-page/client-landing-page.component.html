@@ -1,9 +1,120 @@
 <app-navbar></app-navbar>
 
-<div>
-    <!-- routerLink correctamente en la etiqueta de enlace -->
-    <a class="btn btn-outline-primary me-3" routerLink="/client/viaje"> viaje </a>
-    <router-outlet></router-outlet>
-</div>
+<section class=fondo>
+    <div class="container mt-4">
+        <!-- Barra de navegación de pasos con botones de Bootstrap -->
+        <div class="step-container w-75 mx-auto">
+            <div class="btn-group d-flex w-100 mx-auto mb-4" role="group">
+                <button type="button" class="btn step-btn"
+                    [ngClass]="{'btn-primary': currentStep === 1, 'btn-outline-primary': currentStep !== 1}"
+                    (click)="setStep(1)">
+                    1 ELEGIR DESTINO
+                </button>
+                <button type="button" class="btn step-btn"
+                    [ngClass]="{'btn-primary': currentStep === 2, 'btn-outline-primary': currentStep !== 2}"
+                    (click)="setStep(2)">
+                    2 ITINERARIO
+                </button>
+                <button type="button" class="btn step-btn"
+                    [ngClass]="{'btn-primary': currentStep === 3, 'btn-outline-primary': currentStep !== 3}"
+                    (click)="setStep(3)">
+                    3 REGISTRAR PASAJERO
+                </button>
+                <button type="button" class="btn step-btn"
+                    [ngClass]="{'btn-primary': currentStep === 4, 'btn-outline-primary': currentStep !== 4}"
+                    (click)="setStep(4)">
+                    4 PAGAR
+                </button>
+            </div>
+
+            <!-- Contenido de cada paso -->
+            <div class="step-content">
+
+                <div class="step-content" *ngIf="currentStep === 1 || currentStep === 2">
+                    <form [formGroup]="firstFormGroup" class="w-100 row align-items-end">
+
+                        <!-- Campo de selección de Embarque -->
+                        <div class="form-group col-3">
+                            <label for="origen">Embarque</label>
+                            <select class="form-select form-control w-100" id="origen" formControlName="origen">
+                                <option value="" disabled selected>Selecciona origen</option>
+                                <!-- Marcador de posición -->
+                                <option *ngFor="let origen of origenes" [value]="origen">{{ origen }}</option>
+                            </select>
+                        </div>
+
+                        <!-- Campo de selección de Desembarque -->
+                        <div class="form-group col-3">
+                            <label for="destino">Desembarque</label>
+                            <select class="form-select form-control w-100" id="destino" formControlName="destino">
+                                <option value="" disabled selected>Selecciona destino</option>
+                                <!-- Marcador de posición -->
+                                <option *ngFor="let destino of destinos" [value]="destino">{{ destino }}</option>
+                            </select>
+                        </div>
+
+
+
+                        <div class="form-group col-3">
+                            <label for="fechaIda">Fecha de ida</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="fechaIda" formControlName="fechaIda"
+                                    placeholder="dd/mm/yyyy" #fechaIdaInput />
+                                <span class="input-group-text">
+                                    <i class="fa-regular fa-calendar"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <!-- Botón para pasar al siguiente paso -->
+                        <div class="form-group col-3">
+                            <button class="btn btn-primary w-100" (click)="setStep(2)">Buscar</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!---------------------------------------- itinerario ---------------------------------------------------------------------->
+
+                <!-- Paso 2: Itinerario y selección de asientos -->
+                <!-- Paso 2: Itinerario y selección de asientos -->
+                <div *ngIf="currentStep === 2">
+                    <form [formGroup]="secondFormGroup">
+                        <!-- Aquí podrías tener el formulario de búsqueda de viajes (opcional) -->
+                    </form>
+
+                    <!-- Muestra los viajes en el componente Viaje si no se ha seleccionado un itinerario -->
+                    <div *ngIf="!mostrarSeleccionAsientos">
+                        <app-viaje [viajes]="itinerarios"
+                            (seleccionarItinerario)="onSeleccionarItinerario($event)"></app-viaje>
+                    </div>
+
+                    <!-- Muestra la selección de asientos si se seleccionó un itinerario -->
+                    <div *ngIf="mostrarSeleccionAsientos">
+                        <app-asientos 
+                            [itinerario]="itinerarioSeleccionado" 
+                            [asientoSeleccionado]="asientoSeleccionado" 
+                            (asientoSeleccionadoEvent)="actualizarAsientoSeleccionado($event)" 
+                            (avanzarPasoEvent)="setStep(3)">
+                        </app-asientos>
+                    </div>
+                    
+                </div>
+
+
+                <div *ngIf="currentStep === 3">
+                    <app-pasajero></app-pasajero>
+                    <button class="btn btn-outline-primary mt-3" (click)="setStep(2)">Atrás</button>
+                    <button class="btn btn-primary mt-3" (click)="setStep(4)">Siguiente</button>
+                  </div>
+                  
+
+                <div *ngIf="currentStep === 4">
+                    <p>Ahora has completado el proceso.</p>
+                    <button class="btn btn-outline-primary mt-3" (click)="setStep(3)">Atrás</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
 
 <app-footer></app-footer>

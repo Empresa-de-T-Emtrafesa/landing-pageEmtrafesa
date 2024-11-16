@@ -1,0 +1,17 @@
+<form [formGroup]="pasajeroForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill" class="w-100">
+      <mat-label>Nombre</mat-label>
+      <input matInput formControlName="nombre" placeholder="Ingresa tu nombre" required>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill" class="w-100">
+      <mat-label>Apellido</mat-label>
+      <input matInput formControlName="apellido" placeholder="Ingresa tu apellido" required>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill" class="w-100">
+      <mat-label>Teléfono</mat-label>
+      <input matInput formControlName="telefono" placeholder="Ej. 12345678" required>
+    </mat-form-field>
+    </form>
+  

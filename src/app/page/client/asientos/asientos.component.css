@@ -1,0 +1,61 @@
+.asientos-container {
+    margin-top: 20px;
+  }
+  
+  .piso h5 {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .asientos-fila {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  
+  .asiento {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  .libre {
+    background-color: #e0f7fa;
+  }
+  
+  .ocupada-dama {
+    background-color: #ffcdd2;
+  }
+  
+  .ocupada-caballero {
+    background-color: #bbdefb;
+  }
+  
+  .seleccionado {
+    background-color: #82b1ff;
+    color: #fff;
+  }
+  
+  .en-reserva {
+    background-color: #ffe082;
+  }
+  
+  .informacion-viaje {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  .informacion-viaje strong {
+    display: block;
+  }
+  
+  .btn-primary {
+    background-color: #7b1fa2;
+    border-color: #7b1fa2;
+  }
+  

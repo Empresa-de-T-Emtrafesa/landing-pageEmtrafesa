@@ -1,0 +1,69 @@
+<h5 class="text-center my-3">Selecciona tus asientos para el viaje de {{ itinerario.horaSalida }} a {{ itinerario.horaLlegada }}</h5>
+<div class="asientos-container container">
+  <div class="row">
+    <!-- Columna izquierda para la leyenda de los asientos -->
+    <div class="col-md-3">
+      <h4 class="mb-3">Leyenda</h4>
+      <ul class="list-unstyled">
+        <li><span class="badge ocupada-dama"></span> Asiento ocupado por dama</li>
+        <li><span class="badge ocupada-caballero"></span> Asiento ocupado por caballero</li>
+        <li><span class="badge libre"></span> Asiento libre</li>
+        <li><span class="badge seleccionado"></span> Asiento seleccionado</li>
+        <li><span class="badge en-reserva"></span> Asiento en proceso de reserva</li>
+      </ul>
+    </div>
+
+    <!-- Columna central para la disposición de los asientos -->
+    <div class="col-md-6">
+        <div class="piso text-center mb-4">
+            <h5>1° Piso</h5>
+            <div class="asientos-fila d-flex justify-content-center gap-2">
+              <span
+                class="asiento libre"
+                (click)="seleccionarAsiento(1, 'libre')"
+              >
+                1
+              </span>
+              <span
+                class="asiento ocupada-dama"
+                (click)="seleccionarAsiento(2, 'ocupado')"
+              >
+                2
+              </span>
+            </div>
+          </div>
+          <div class="piso text-center">
+            <h5>2° Piso</h5>
+            <div class="asientos-fila d-flex justify-content-center gap-2">
+              <span
+                class="asiento libre"
+                (click)="seleccionarAsiento(21, 'libre')"
+              >
+                21
+              </span>
+              <span
+                class="asiento ocupada-caballero"
+                (click)="seleccionarAsiento(22, 'ocupado')"
+              >
+                22
+              </span>
+            </div>
+          </div>
+          
+    </div>
+
+    <!-- Columna derecha para la información del viaje -->
+    <div class="col-md-3">
+        <h4 class="mb-3">Información de Viaje</h4>
+        <p><strong>Fecha:</strong> {{ itinerario.fecha }}</p>
+        <p><strong>Salida:</strong> {{ itinerario.horaSalida }}</p>
+        <p><strong>Embarque:</strong> {{ itinerario.origen }}</p>
+        <p><strong>Desembarque:</strong> {{ itinerario.destino }}</p>
+        <p><strong>Precio 1° Nivel:</strong> S/ {{ itinerario.precioNivel1 }}</p>
+        <p><strong>Precio 2° Nivel:</strong> S/ {{ itinerario.precioNivel2 }}</p>
+        <p><strong>Asiento Seleccionado:</strong> {{ asientoSeleccionado || 'Ninguno' }}</p>
+        <p><strong>Total:</strong> S/ {{ itinerario.precioTotal || 0 }}</p>
+
+        <button class="btn btn-primary mt-3" (click)="avanzarPaso()">Registrar Pasajeros</button>
+      </div>      
+</div>

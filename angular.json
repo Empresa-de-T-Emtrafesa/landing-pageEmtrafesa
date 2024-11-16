@@ -21,14 +21,19 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
-                "src/assets",
+              "src/assets",
               "src/favicon.ico"
             ],
             "styles": [
               "@angular/material/prebuilt-themes/azure-blue.css",
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/@coreui/coreui/dist/css/coreui.min.css",
+              "node_modules/flatpickr/dist/flatpickr.min.css"
+
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/@coreui/coreui/dist/js/coreui.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -90,7 +95,6 @@
               }
             ],
             "styles": [
-              "@angular/material/prebuilt-themes/azure-blue.css",
               "src/styles.css"
             ],
             "scripts": []

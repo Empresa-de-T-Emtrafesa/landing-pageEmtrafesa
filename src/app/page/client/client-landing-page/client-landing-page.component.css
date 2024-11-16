@@ -1,0 +1,93 @@
+/* Contenedor de todo el componente de pasos */
+.step-container {
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Barra de botones de navegación */
+.btn-group {
+  border-radius: 15px;
+}
+
+/* Botones de paso */
+.step-btn {
+  flex: 1;
+  height: 60px;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0; /* Sin bordes redondeados para que se vea como una unidad */
+}
+
+/* Contenido de cada paso */
+.step-content {
+  padding: 20px;
+}
+
+/* Personalización del color del botón activo */
+.btn-primary {
+  background-color: #7432fa;
+  border-color: #7432fa;
+  color: white;
+  border-radius: 15px;
+}
+
+.btn-outline-primary {
+  color: #7432fa; /* Solo el color del texto */
+  border: none; /* Elimina el borde cuando el botón está inactivo */
+}
+
+/* Hover y focus en el botón activo */
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #5a23c9;
+  border-color: #5a23c9;
+}
+
+.btn-primary-buscar{
+  background-color: #5a23c9;
+  color: #ffffff;
+  width: 100px;
+}
+
+/* Estilo para los días habilitados al pasar el cursor */
+.custom-day {
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  border-radius: 0.25rem;
+}
+
+/* Hover: fondo gris medio y tamaño mayor */
+.custom-day:hover {
+  background-color: #d3d3d3; /* Fondo gris medio en hover */
+  transform: scale(1.1); /* Aumenta el tamaño ligeramente */
+  cursor: pointer;
+}
+
+/* Estilo para el día actual sin borde ni fondo especial */
+.custom-day.today {
+  background-color: transparent; /* Sin fondo ni borde */
+  color: inherit;
+}
+
+/* Estilo para los días deshabilitados en gris claro */
+.ngb-dp-day.disabled .custom-day {
+  color: #e0e0e0; /* Gris claro */
+  pointer-events: none; /* Evita la selección */
+}
+
+.form-control{
+  font-size: 15px;
+  font-family: 'Tahoma';
+  color: #3a393b;
+}
+
+.form-control:hover{
+  color:#000000
+}
+
+.form-group{
+  padding-bottom: 15px;
+}
