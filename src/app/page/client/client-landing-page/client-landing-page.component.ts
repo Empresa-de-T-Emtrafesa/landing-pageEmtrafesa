@@ -1,7 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, inject, ViewChild, ViewEncapsulation } from '@angular/core';
-import { NavbarComponent } from '../../../shared/components/navbar/navbar.component';
-import { FooterComponent } from '../../../shared/components/footer/footer.component';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule, FormGroup, FormBuilder, Validators } from '@angular/forms';
@@ -19,8 +17,6 @@ import { PasajeroService } from '../../../core/services/pasajero.service';
   standalone: true,
   imports: [
     CommonModule,
-    NavbarComponent,
-    FooterComponent,
     RouterLink,
     RouterOutlet,
     MatFormFieldModule,
@@ -136,3 +132,39 @@ export class ClientLandingPageComponent {
   }
   
 }
+/*
+import { CommonModule } from '@angular/common';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+
+@Component({
+  selector: 'app-client-landing-page',
+  imports:[
+    CommonModule,
+    RouterOutlet
+
+  ],
+  templateUrl: './client-landing-page.component.html',
+  styleUrls: ['./client-landing-page.component.css'],
+  standalone: true
+})
+export class ClientLandingPageComponent {
+  @Output() search = new EventEmitter<any>();
+
+  tripType: string = 'round-trip';
+  origen: string = '';
+  destino: string = '';
+  fecha: string = '';
+  passengers: number = 1;
+
+  onSearch(): void {
+    const searchCriteria = {
+      tripType: this.tripType,
+      origen: this.origen,
+      destino: this.destino,
+      fecha: this.fecha,
+      passengers: this.passengers,
+    };
+    this.search.emit(searchCriteria);
+  }
+}*/

@@ -1,0 +1,38 @@
+footer {
+    font-family: 'Roboto', Arial, sans-serif; /* Fuente similar a la imagen */
+    background-color: #f8f9fa; /* Fondo claro */
+  
+    h5 {
+      font-weight: bold;
+      margin-bottom: 1rem;
+      color: #444; /* Texto gris oscuro */
+    }
+  
+    a {
+      text-decoration: none;
+      color: #666; /* Texto gris intermedio */
+      &:hover {
+        color: #444; /* Oscurece en hover */
+      }
+    }
+  
+    .years {
+      font-size: 0.9rem;
+      color: #999; /* Gris claro para los años */
+    }
+  
+    .fab {
+      font-size: 1.5rem;
+      color: #6c757d; /* Color gris para íconos de redes sociales */
+      &:hover {
+        color: #444; /* Oscurece en hover */
+      }
+    }
+  
+    p {
+      font-size: 0.9rem;
+      color: #777; /* Texto gris claro */
+      margin-top: 1rem;
+    }
+  }
+  

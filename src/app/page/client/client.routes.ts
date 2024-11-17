@@ -10,6 +10,7 @@ export const clientRoutes: Routes = [
         path: '',
         component: ClientLandingPageComponent,
         children: [
+            { path: '', redirectTo: 'compra', pathMatch: 'full' },
             { path: 'compra', component: CompraComponent },
             { path: 'profile', component: UserProfileComponent },
             { path: 'profile/update', component: UpdateProfileComponent },

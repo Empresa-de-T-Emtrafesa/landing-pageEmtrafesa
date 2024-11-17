@@ -67,3 +67,125 @@
     background-color: #6740b6;
     font-family: 'Trebuchet MS';
 }
+/* Barra superior */
+.direc {
+    background-color: #7432fa;
+    font-family: "Trebuchet MS", sans-serif;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+.address {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.address:hover {
+    text-decoration: underline;
+}
+
+.nav-item {
+    margin-right: 15px;
+}
+
+/* Navbar principal */
+.navbar {
+    background-color: #ffffff;
+    font-family: "Trebuchet MS", sans-serif;
+    border-bottom: 2px solid #7432fa;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    color: #7432fa;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.brand-text {
+    margin-left: 10px;
+}
+
+.navbar-toggler {
+    border-color: #7432fa;
+}
+
+.navbar-toggler-icon {
+    color: #7432fa;
+}
+
+.nav-link {
+    color: #7432fa;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-link:hover {
+    color: #6740b6;
+    font-weight: 600;
+    transform: scale(1.05);
+}
+
+/* Botones */
+.btn-outline-primary {
+    color: #7432fa;
+    border-color: #7432fa;
+    border-radius: 10px;
+}
+
+.btn-outline-primary:hover {
+    background-color: #7432fa;
+    color: #ffffff;
+}
+
+.btn-primary {
+    background-color: #7432fa;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.btn-primary:hover {
+    background-color: #6740b6;
+}
+
+/* Menú desplegable */
+.dropdown-menu {
+    background-color: #ffffff;
+    border: 1px solid #7432fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu .dropdown-item {
+    color: #7432fa;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: #7432fa;
+    color: #ffffff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .direc {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .direc ul {
+        margin: 10px 0;
+    }
+
+    .navbar-nav {
+        justify-content: center;
+    }
+}
