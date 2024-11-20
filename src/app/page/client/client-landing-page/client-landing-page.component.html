@@ -1,5 +1,6 @@
+<!-- src/app/page/client/client-landing-page/client-landing-page.component.html -->
 
-<section class=fondo>
+<section class="fondo">
     <div class="container mt-4">
         <!-- Barra de navegación de pasos con botones de Bootstrap -->
         <div class="step-container w-75 mx-auto">
@@ -29,31 +30,35 @@
             <!-- Contenido de cada paso -->
             <div class="step-content">
 
+                <!-- Paso 1: Selección de Origen y Destino -->
                 <div class="step-content" *ngIf="currentStep === 1 || currentStep === 2">
                     <form [formGroup]="firstFormGroup" class="w-100 row align-items-end">
 
-                        <!-- Campo de selección de Embarque -->
+                        <!-- Campo de selección de Embarque (Origen) -->
                         <div class="form-group col-3">
                             <label for="origen">Embarque</label>
                             <select class="form-select form-control w-100" id="origen" formControlName="origen">
                                 <option value="" disabled selected>Selecciona origen</option>
-                                <!-- Marcador de posición -->
                                 <option *ngFor="let origen of origenes" [value]="origen">{{ origen }}</option>
                             </select>
+                            <div *ngIf="loadingOrigenes" class="spinner-border spinner-border-sm text-primary mt-1" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
                         </div>
 
-                        <!-- Campo de selección de Desembarque -->
+                        <!-- Campo de selección de Desembarque (Destino) -->
                         <div class="form-group col-3">
                             <label for="destino">Desembarque</label>
-                            <select class="form-select form-control w-100" id="destino" formControlName="destino">
+                            <select class="form-select form-control w-100" id="destino" formControlName="destino" [disabled]="!firstFormGroup.get('origen')?.value || loadingDestinos">
                                 <option value="" disabled selected>Selecciona destino</option>
-                                <!-- Marcador de posición -->
                                 <option *ngFor="let destino of destinos" [value]="destino">{{ destino }}</option>
                             </select>
+                            <div *ngIf="loadingDestinos" class="spinner-border spinner-border-sm text-primary mt-1" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
                         </div>
 
-
-
+                        <!-- Campo de selección de Fecha de Ida -->
                         <div class="form-group col-3">
                             <label for="fechaIda">Fecha de ida</label>
                             <div class="input-group">
@@ -64,17 +69,17 @@
                                 </span>
                             </div>
                         </div>
+
                         <!-- Botón para pasar al siguiente paso -->
                         <div class="form-group col-3">
-                            <button class="btn btn-primary w-100" (click)="setStep(2)">Buscar</button>
+                            <button class="btn btn-primary w-100" type="button" (click)="setStep(2)" [disabled]="!firstFormGroup.valid">
+                                Buscar
+                            </button>
                         </div>
                     </form>
                 </div>
 
-                <!---------------------------------------- itinerario ---------------------------------------------------------------------->
-
-                <!-- Paso 2: Itinerario y selección de asientos -->
-                <!-- Paso 2: Itinerario y selección de asientos -->
+                <!-- Paso 2: Itinerario y Selección de Asientos -->
                 <div *ngIf="currentStep === 2">
                     <form [formGroup]="secondFormGroup">
                         <!-- Aquí podrías tener el formulario de búsqueda de viajes (opcional) -->
@@ -98,7 +103,7 @@
                     
                 </div>
 
-
+                <!-- Paso 3: Registro de Pasajeros -->
                 <div *ngIf="currentStep === 3">
                     <app-pasajero (formValidity)="formValid = $event" #pasajeroComponent></app-pasajero>
                     <button class="btn btn-outline-primary mt-3" (click)="setStep(2)">Atrás</button>
@@ -109,8 +114,9 @@
                       Ir a Pagar
                     </button>
                   </div>
-                  
+                
 
+                <!-- Paso 4: Pago -->
                 <div *ngIf="currentStep === 4">
                     <p>Ahora has completado el proceso.</p>
                     <button class="btn btn-outline-primary mt-3" (click)="setStep(3)">Atrás</button>
@@ -118,7 +124,4 @@
             </div>
         </div>
     </div>
-
 </section>
-<!--<router-outlet></router-outlet>  Aquí se renderizan las rutas hijas-->
-

@@ -4,17 +4,19 @@ import { NavbarComponent } from '../../../shared/components/navbar/navbar.compon
 import { FooterComponent } from '../../../shared/components/footer/footer.component';
 import { PromotionsComponent } from '../../../shared/components/promotions/promotions.component';
 import { ClientLandingPageComponent } from "../../client/client-landing-page/client-landing-page.component";
+import { DireccionComponent } from "../../../shared/components/direccion/direccion.component";
 
 @Component({
   selector: 'app-auth-layout',
   standalone: true,
   imports: [
     NavbarComponent,
+    DireccionComponent,
     FooterComponent,
     PromotionsComponent,
     ClientLandingPageComponent,
     RouterOutlet,
-    
+    DireccionComponent
 ],
   templateUrl: './auth-layout.component.html',
   styleUrls: ['./auth-layout.component.css']

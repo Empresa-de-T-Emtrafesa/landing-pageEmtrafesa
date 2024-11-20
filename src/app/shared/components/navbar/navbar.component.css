@@ -67,28 +67,6 @@
     background-color: #6740b6;
     font-family: 'Trebuchet MS';
 }
-/* Barra superior */
-.direc {
-    background-color: #7432fa;
-    font-family: "Trebuchet MS", sans-serif;
-    color: #ffffff;
-    padding: 10px 20px;
-    font-size: 14px;
-}
-
-.address {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.address:hover {
-    text-decoration: underline;
-}
-
-.nav-item {
-    margin-right: 15px;
-}
 
 /* Navbar principal */
 .navbar {
